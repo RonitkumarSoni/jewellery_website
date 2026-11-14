@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #faf6f0;
+  --foreground: #2b1d16;
+}
+
+body {
+  background-color: #FDFBF7;
+  color: #381E11;
+  font-family: var(--font-cormorant), serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ebd9;
+}
+::-webkit-scrollbar-thumb {
+  background: #a46d38;
+  border-radius: 4px;
+}
+
+/* GSAP initial clip-path for left-to-right reveal effect */
+.image-reveal {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  will-change: clip-path;
+}
+
+/* Navbar heartbeat animated link effect */
+.nav-link {
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3px;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #461115;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  animation: heartbeat116 1.5s ease-in-out 0.3s infinite;
+}
+
+@keyframes heartbeat116 {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 60%;
+  }
+}
+.footer-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #E1D1BF;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 3px 0;
+  text-decoration: none;
+}
+
+.footer-link::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-10px) scale(0.5);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  color: #E5C78D;
+  font-size: 9px;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #F3DFB0 0%, #D4AF37 50%, transparent 100%);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footer-link:hover {
+  color: #FFFFFF;
+  padding-left: 18px;
+  text-shadow: 0 0 10px rgba(243, 223, 176, 0.45);
+}
+
+.footer-link:hover::before {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+
