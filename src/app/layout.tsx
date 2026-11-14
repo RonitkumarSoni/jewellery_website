@@ -17,6 +17,11 @@ const cinzel = Cinzel({
 export const metadata: Metadata = {
   title: "Rishav Jewellers | Timeless Elegance, Made to Treasure",
   description: "Discover handcrafted luxury gold, diamond, and bridal jewellery at Rishav Jewellers. Crafted with trust, celebrating every occasion.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
